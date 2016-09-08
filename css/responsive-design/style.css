@@ -14,6 +14,13 @@ cite {
   padding-left: 0px;
 }
 
+section#external-links {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
@@ -30,3 +37,44 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+body {
+  max-width: 960px;
+  min-width: 490px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  width: 75%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+/* This makes the background hot pink when display < 500px */
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: .5em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    width: 100%;
+    position: absolute;
+  }
+  main {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+}
+/* Mobile first design prioritizes responsiveness for mobile devices*/
+
+
