@@ -9,6 +9,38 @@
 -walk out of elevator
 
 
-
-
 (would also need some conditionals for doors opening on other floors)
+
+
+
+Release 1: Algorithm for coffee making
+
+-Walk into kitchen
+-Turn left and locate kettle
+-Open kettle
+	-if empty, fill 1/2 way with water then put on base
+	-if full, put on base
+-press down on lever to start heating
+-Open cupboard
+	-if there are clean coffee mugs, take one out
+	-if no clean coffee mugs, take another type of clean glass
+	-if no clean coffee mugs or glasses, go to sink and wash one from the apparent pile.
+-put mug (or glass) on counter
+-in cupboard, retrieve brewing cone and coffee filter
+	-if cone not in cupboard, check sink
+		-if in sink, clean it
+		-if nowhere to be found, drink water whilst sobbing
+	-if out of coffee filters, drink water whilst sobbing
+-put cone on top of mug, and filter inside of cone
+-In cupboard, retrieve bag of ground coffee
+	-if no bag, drink water whilst sobbing
+-open bag
+-pour ground coffee into filter until 1 in depth
+-close bag, put back in cupboard
+-take kettle off base, pour water into filter until nearly full
+-once water has gone down to bottom of filter, pour water into filter until nearly full
+-repeat until mug is nearly full
+
+
+
+NOTE:  After writing out the steps, I realize that it would have been more efficient to check for all the needed supplies before proceeding with any other steps (for example, don’t boil water and take down filter, coffee cone etc unless you are sure that you actually have coffee and the needed tools)
