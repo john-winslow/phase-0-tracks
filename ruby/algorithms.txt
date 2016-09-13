@@ -1,0 +1,14 @@
+-If you want to go to a higher floor than current location, press the ‘up’ button.
+	-If you want to go to a lower floor, press the ‘down’ button.
+-wait for elevator to arrive.
+-when the doors are open, walk into the elevator and turn around.
+-look at the panel of floor # buttons on the wall.
+	-starting at the level 1 button, search for desired floor # by adding 1 until you are looking at the button for the desired floor.
+	-push the button
+-wait in elevator until doors open
+-walk out of elevator
+
+
+
+
+(would also need some conditionals for doors opening on other floors)
