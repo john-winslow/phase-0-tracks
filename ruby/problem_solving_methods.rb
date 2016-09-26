@@ -53,3 +53,31 @@ p fibonacci(100).last
 # Release 2: Sort an Array
 
 
+# Bubble Sort: A sorting method that compares adjacent elements
+# starting at the beginning of the list, and switches them if out 
+# of order. It then moves to the next adjacent pair of elements, 
+# including the last element from the previous pair.
+# Larger elements will "bubble" to the end of a list.  Not very efficient.
+
+
+def bubble(arr)
+	length = arr.length
+	loop do
+		switch = false
+		(length - 1).times do |i|
+# if first two elements are improperly ordered, switch them
+	    	if arr[i] > arr[i + 1]
+	    		arr[i], arr[i + 1] = arr[i+1], arr[i]
+	        	switch = true
+	    	end
+		end
+# if correctly ordered, loop through to the next set of elements
+		if switch == false
+	   		break
+		end
+	end
+arr
+end
+
+arr = [55, 10, 15, 77, 22, 19, 0]
+p bubble(arr)
