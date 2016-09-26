@@ -1,28 +1,31 @@
 # 5.5 Solo Challenge: Manipulating Strings with Iteration
 
-# Release 0: Attempt a Tricky Algorithm
+real_name = ''
+roster = []
 
-# Ask for real name
-puts "Greetings, agent #{rand(50)}.  What is your real name?"
-real_name = gets.chomp
+# loop until user types 'quit'
+until real_name == 'quit'
 
-# Define a new class (so that local variables can be output)
+# ask for agent name input
+puts "What is the real name of agent 00#{rand(10)}?  Type 'quit' when done."
+real_name = gets.chomp.downcase
+
+# break loop if user types 'quit'
+if real_name == "quit"
+	puts "Watch your back out there!"
+else
+
+# define a new class (so that local variables can be output)
 class Spies
-
-# Define method
-# 1: swap first and last name
+# swap first and last name, split characters into array
 	def disguise(input1)
-# 	Split first and last name into separate strings
+# 	split first and last name into separate strings
 		new_lastname = input1.split.first
 		new_firstname = input1.split.last
 
-# 	Split name into array of individual characters (downcase)
-		spy_characters_firstname = new_firstname.downcase.split('')
-		spy_characters_lastname = new_lastname.downcase.split('')
-
-# define vowels and consonant variables
-# (note I added the index(0) value to the end of
-# each array, for edge cases ("u" and "z"))
+# 	split name into array of individual characters
+		spy_characters_firstname = new_firstname.split('')
+		spy_characters_lastname = new_lastname.split('')
 
 # loop through each letter for each string
 		def scrambler(input2)
@@ -69,5 +72,16 @@ a.disguise(real_name)
 spy_name = a.instance_variable_get(:@spy_name)
 
 # output code name
-puts "Your code name is #{spy_name}.  Don't forget it!"
+puts "Code name: #{spy_name}.  Don't forget it!"
 
+end
+# unless user enters 'quit', add real name and disguise name
+# to array
+unless real_name == "quit"
+roster << [real_name, spy_name]
+end
+end
+# when exiting loop, print out true identities from roster
+roster.each do |real_name, spy_name|
+	 puts "#{spy_name} is really #{real_name.capitalize}."
+end
