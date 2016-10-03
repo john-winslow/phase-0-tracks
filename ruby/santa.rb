@@ -1,5 +1,8 @@
 class Santa
 
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		p "Initializing Santa instance..."
 		@gender = gender
@@ -29,19 +32,6 @@ class Santa
 		@reindeer_ranking[-1] = reindeer
 	end
 
-# SETTER METHOD: assign new gender
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-# getter methods
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
 end
 
 # create empty array for santas
@@ -64,7 +54,7 @@ p santas[0].eat_milk_and_cookies("Chocolate")
 p santas[0]
 
 
-
+santas[0].gender = "All of the genders"
 santas[0].get_mad_at('Vixen')
 puts "after"
 p santas[0]
