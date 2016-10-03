@@ -1,5 +1,14 @@
 class Santa
 
+	def initialize(gender, ethnicity)
+		p "Initializing Santa instance..."
+		@gender = gender
+		@ethnicity = ethnicity
+		@reindeer_ranking = ['Rudolph', 'Dasher', 'Dancer', 'Prancer',
+		'Vixen', 'Comet', 'Cupid', 'Donner', 'Blitzen']
+		@age = 0
+	end
+
 	def speak
 		p "Ho, ho, ho!  Haaaaappy holidays!"
 	end
@@ -8,13 +17,55 @@ class Santa
 		p "That was a good #{cookie} cookie!!"
 	end
 
-	def initialize
-		p "Initializing Santa instance..."
+# attribute changing methods:
+	def celebrate_birthday
+		@age += 1
 	end
 
+# move input reindeer to last place in reindeer ranking
+	def get_mad_at(reindeer)
+		reindeer_index = @reindeer_ranking.index(reindeer)
+		@reindeer_ranking.delete_at(reindeer_index)
+		@reindeer_ranking[-1] = reindeer
+	end
+
+# SETTER METHOD: assign new gender
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
+# getter methods
+	def age
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
 end
 
-santa1 = Santa.new
+# create empty array for santas
+santas = []
 
-santa1.speak
-santa1.eat_milk_and_cookies("peanut butter")
+# create array of gender & ethnicity options
+genders = ["male", "female", "bigender", "undecided", "gender fluid", "N/A"]
+ethnicities = ["American Chinese", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+# fill santa arrays with new santa objects 
+genders.length.times do |i|
+  santas << Santa.new(genders[i], ethnicities[i])
+end
+
+
+p santas[0].age
+santas[0].celebrate_birthday
+p santas[0].age
+p santas[0].eat_milk_and_cookies("Chocolate")
+p santas[0]
+
+
+
+santas[0].get_mad_at('Vixen')
+puts "after"
+p santas[0]
+
