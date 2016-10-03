@@ -61,7 +61,7 @@ ethnicities = ["American Chinese", "Latino", "white", "Japanese-African", "prefe
 # puts "after"
 # p santas[0]
 
-10.times do 
+20.times do 
 	santas << Santa.new(genders.sample, ethnicities.sample)
 
 end
