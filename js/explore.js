@@ -1,8 +1,12 @@
-// declare variable
+// create function with string input
+function reverse(str) {
 
-var str = "reverse this string!";
-
-for (var i = 0; i < str.length; i++) {
+// create an empty string to populate 
+	var reversed = "";
+// for loop: start at end of string (-1)
+	for (var i = str.length; i > 0; i--) {
+		reversed =+ str[i];
+	}
 
 }
 // break string apart into characters
