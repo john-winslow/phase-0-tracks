@@ -8,9 +8,15 @@ function reverse(str) {
 	for (var i = str.length - 1; i >= 0; i--) {
 		reversed += str[i];
 	}
-	console.log(reversed);
+	return reversed
 }
 
 // test
-reverse("hello");
-reverse("namaste")
+// reverse("namaste");
+
+// store result as a variable
+var result = reverse("namaste");
+
+if (1 == 1) {
+	console.log(result);
+}
