@@ -49,24 +49,21 @@ class WordGuess
 	end
 
 end
-
-puts "Welcome to the WordGuess game!  Enter a word for player2 to guess:"
-game1 = WordGuess.new(gets.chomp)
-
-until game1.word == game1.current_word || game1.guess_counter == 0
-	puts "Guess a letter - #{game1.guess_counter} guesses remaining."
-	letter = gets.chomp
-	input = game1.guess(letter)
-		if input == nil
-			puts "Letter already guessed.  Pick another!"
-		elsif input == true
-			puts "Well done - there is a #{letter} in the secret word."
-			puts "#{game1.current_word}"
-		elsif input == false
-			puts "Fail!  There are no #{letter}'s in the secret word.  Guess again!"
-		end
 end
-end
+# puts "Welcome to the WordGuess game!  Enter a word for player2 to guess:"
+# game1 = WordGuess.new(gets.chomp)
 
-
-
+# until game1.word == game1.current_word || game1.guess_counter == 0
+# 	puts "Guess a letter - #{game1.guess_counter} guesses remaining."
+# 	letter = gets.chomp
+#	input = game1.guess(letter)
+#		if input == nil
+#			puts "Letter already guessed.  Pick another!"
+#		elsif input == true
+#			puts "Well done - there is a #{letter} in the secret word."
+#			puts "#{game1.current_word}"
+#		elsif input == false
+#			puts "Fail!  There are no #{letter}'s in the secret word.  Guess again!"
+#		end
+# end
+# end
