@@ -4,12 +4,15 @@ class Santa
 	attr_accessor :gender
 
 	def initialize(gender, ethnicity)
-		p "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ['Rudolph', 'Dasher', 'Dancer', 'Prancer',
 		'Vixen', 'Comet', 'Cupid', 'Donner', 'Blitzen']
-		@age = 0
+		@age = rand(140)
+		p "New Santa created! Attributes:"
+		p "Age: #{age}"
+		p "Ethnicity: #{ethnicity}"
+		p "Gender: #{gender}"
 	end
 
 	def speak
@@ -42,20 +45,26 @@ genders = ["male", "female", "bigender", "undecided", "gender fluid", "N/A"]
 ethnicities = ["American Chinese", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 # fill santa arrays with new santa objects 
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
+# genders.length.times do |i|
+#  santas << Santa.new(genders[i], ethnicities[i])
+# end
+
+# Driver code to test 
+# p santas[0].age
+# santas[0].celebrate_birthday
+# p santas[0].age
+# p santas[0].eat_milk_and_cookies("Chocolate")
+
+# p santas[0]
+# santas[0].gender = "All of the genders"
+# santas[0].get_mad_at('Vixen')
+# puts "after"
+# p santas[0]
+
+10.times do 
+	santas << Santa.new(genders.sample, ethnicities.sample)
+
 end
 
 
-p santas[0].age
-santas[0].celebrate_birthday
-p santas[0].age
-p santas[0].eat_milk_and_cookies("Chocolate")
-p santas[0]
-
-
-santas[0].gender = "All of the genders"
-santas[0].get_mad_at('Vixen')
-puts "after"
-p santas[0]
 
