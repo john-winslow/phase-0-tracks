@@ -1,23 +1,25 @@
-// create an array
-var array = ["hello", "hola", "namaste", "ni hao", "konichiwa", "bonjour"];
-var array2 = ["gutentag", "hi", "hallo"]
-// print array to show initial order
-console.log(array)
-console.log(array2)
+// RELEASE 0:
 
 // sort the array according to length of strings
-function return_longest(input) {
-	input.sort(function(a, b){
+function return_longest(array) {
+	array.sort(function(a, b){
   	return b.length - a.length;
 	});
+
 // print the first item in the sorted array
-	console.log(input[0]);
+	console.log(array[0]);
 };
 
+// DRIVER CODE:
+
+// create an array
+var arr= ["hello", "hola", "namaste", "ni hao", "konichiwa", "bonjour"];
+var arr2 = ["gutentag", "hi", "hallo", "omg like hi!!"]
+
+// print array to show initial order
+console.log(arr)
+console.log(arr2)
+
 // test the functions
-return_longest(array);
-return_longest(array2);
-
-
-// ISSUE:  function is executing on first array only 
-// (return_longest(array2) prints first array)
+return_longest(arr);
+return_longest(arr2);
