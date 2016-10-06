@@ -20,7 +20,7 @@ function sharedValues (ob1, ob2) {
 	var ob1Keys = Object.keys(ob1);
 	var ob2Keys = Object.keys(ob2);
 // loop through and compare values of each key
-	for (var = i; i < ob1.length || i < ob2.length; i++) {
+	for (var i = 0; i < ob1.length || i < ob2.length; i++) {
 // if the keys match
 		if (ob1Keys[i] == ob2Keys[i]){
 // and the key values are shared
