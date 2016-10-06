@@ -20,18 +20,18 @@ function sharedValues (ob1, ob2) {
 	var ob1Keys = Object.keys(ob1);
 	var ob2Keys = Object.keys(ob2);
 // loop through and compare values of each key
-	for (var i = 0; i < ob1.length || i < ob2.length; i++) {
+	for (var i = 0; i < ob1Keys.length || i < ob2Keys.length; i++) {
 // if the keys match
 		if (ob1Keys[i] == ob2Keys[i]){
 // and the key values are shared
-			if  (ob1[ob1Keys[i]] == ob2[ob2Keys[i]])
+			if  (ob1[ob1Keys[i]] == ob2[ob2Keys[i]]) {
 // chanced sharedValue to true
 				sharedValue = true;
 			}	
 		}
 	}
-console.log(sharedValue)
-}
+	console.log(sharedValue)
+};
 
 //--------------------------------------------------------//
 // DRIVER CODE:
@@ -40,11 +40,11 @@ console.log(sharedValue)
 
 // create an array
 var arr= ["hello", "hola", "namaste", "ni hao", "konichiwa", "bonjour"];
-var arr2 = ["gutentag", "hi", "hallo", "omg like hi!!"]
+var arr2 = ["gutentag", "hi", "hallo", "omg like hi!!"];
 
 // print array to show initial order
-console.log(arr)
-console.log(arr2)
+console.log(arr);
+console.log(arr2);
 
 // test the functions
 return_longest(arr);
@@ -55,8 +55,8 @@ return_longest(arr2);
 
 // define objects to compare
 var object1 = {name: "Tamir", age: 54};
-var object2 = {name: "Steven", age: 50};
+var object2 = {name: "Steven", age: 54};
 
-sharedValues(object1, object2)
+sharedValues(object1, object2);
 
 
