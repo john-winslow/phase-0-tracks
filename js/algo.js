@@ -13,18 +13,25 @@ function return_longest(array) {
 //--------------------------------------------------------//
 // RELEASE 1:
 
-// if one key value pair is included in the other,
-// return true.  If not, return false.
-function sharedValues(object1, object2) {
-	if (condition = true) {
-		console.log("true")
+// if key values match between objects, return true; else return false
+function sharedValues (ob1, ob2) {
+// assign key values to each object, and a default "false" for shared value variable
+	var sharedValue = false;
+	var ob1Keys = Object.keys(ob1);
+	var ob2Keys = Object.keys(ob2);
+// loop through and compare values of each key
+	for (var = i; i < ob1.length || i < ob2.length; i++) {
+// if the keys match
+		if (ob1Keys[i] == ob2Keys[i]){
+// and the key values are shared
+			if  (ob1[ob1Keys[i]] == ob2[ob2Keys[i]])
+// chanced sharedValue to true
+				sharedValue = true;
+			}	
+		}
 	}
-	if (condition = false) {
-		console.log("false")
-	}
+console.log(sharedValue)
 }
-
-
 
 //--------------------------------------------------------//
 // DRIVER CODE:
@@ -46,6 +53,10 @@ return_longest(arr2);
 
 	// Release 1:
 
+// define objects to compare
+var object1 = {name: "Tamir", age: 54};
+var object2 = {name: "Steven", age: 50};
 
+sharedValues(object1, object2)
 
 
