@@ -21,13 +21,10 @@ function sharedValues (ob1, ob2) {
 	var ob2Keys = Object.keys(ob2);
 // loop through and compare values of each key
 	for (var i = 0; i < ob1Keys.length || i < ob2Keys.length; i++) {
-// if the keys match
-		if (ob1Keys[i] == ob2Keys[i]){
-// and the key values are shared
-			if  (ob1[ob1Keys[i]] == ob2[ob2Keys[i]]) {
-// chanced sharedValue to true
-				sharedValue = true;
-			}	
+// if the keys match AND the values of the keys match
+		if (ob1Keys[i] == ob2Keys[i] && (ob1[ob1Keys[i]] == ob2[ob2Keys[i]])) {
+// change sharedValue to true
+			sharedValue = true;
 		}
 	}
 	console.log(sharedValue)
