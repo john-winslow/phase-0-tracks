@@ -1,13 +1,13 @@
 // RELEASE 0:
 
 // sort the array according to length of strings
-function return_longest(array) {
+function returnLongest(array) {
 	array.sort(function(a, b){
   	return b.length - a.length;
 	});
 
 // print the first item in the sorted array
-	console.log(array[0]);
+	return(array[0]);
 };
 
 //--------------------------------------------------------//
@@ -55,8 +55,6 @@ function randomArray(arrayLength) {
 	return array
 }
 
-
-
 //--------------------------------------------------------//
 // DRIVER CODE:
 
@@ -71,8 +69,8 @@ console.log(arr);
 console.log(arr2);
 
 // test the functions
-return_longest(arr);
-return_longest(arr2);
+console.log(returnLongest(arr));
+console.log(returnLongest(arr2));
 
 
 	// Release 1:
@@ -92,6 +90,17 @@ console.log(sharedValues(object1, object3));
 // expect FALSE: key names are different, even though key values are matched
 console.log(sharedValues(object3, object4))
 
+
+	// Release 2:
+
+// generate and print array, feed into longest word function, print again.  10 times
+
+for (var i = 0; i < 10; i++) {
+// making each array length random (between 1 and 10), just for fun
+	array = randomArray(Math.floor(Math.random() * 10) + 1);
+	console.log(array)
+	console.log("Longest word:" + returnLongest(array))
+}
 
 
 
