@@ -39,19 +39,21 @@ function sharedValues (ob1, ob2) {
 function randomArray(arrayLength) {
 // assign array and alphabet variable
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	var randomArray = [];
+	var array = [];
 // loop/iterate the length of user/function input
-	for (var i = 0; i < (Math.floor(Math.random() * 10) + 1); i++) {
-		randomWord = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-		randomArray += randomWord
+	for (var x = 0; x < arrayLength; x++) {
+// create variable to be rewritten after each macro loop
+	var newWord = "";
+// for a random number of times between 1-10,
+		for (var i = 0; i < (Math.floor(Math.random() * 10) + 1); i++) {
+// add a random letter of alphabet to a new string
+			newWord += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+		}
+// push the string into the array after each macro loop
+		array.push(newWord)
 	}
-	return randomArray
+	return array
 }
-
-
-
-
-
 
 
 
