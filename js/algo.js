@@ -31,6 +31,31 @@ function sharedValues (ob1, ob2) {
 };
 
 //--------------------------------------------------------//
+// RELEASE 2:
+
+//  create array with length of input integer, returning strings of random length
+//  between 1-10
+
+function randomArray(arrayLength) {
+// assign array and alphabet variable
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	var randomArray = [];
+// loop/iterate the length of user/function input
+	for (var i = 0; i < (Math.floor(Math.random() * 10) + 1); i++) {
+		randomWord = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+		randomArray += randomWord
+	}
+	return randomArray
+}
+
+
+
+
+
+
+
+
+//--------------------------------------------------------//
 // DRIVER CODE:
 
 	// Release 0:
