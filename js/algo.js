@@ -27,7 +27,7 @@ function sharedValues (ob1, ob2) {
 			sharedValue = true;
 		}
 	}
-	console.log(sharedValue)
+	return sharedValue
 };
 
 //--------------------------------------------------------//
@@ -57,13 +57,13 @@ var object3 = {name: "Emily", age: 27};
 var object4 = {person: "Emily", age: 26}
 
 // expect TRUE: value of 'age' matches
-sharedValues(object1, object2);
+console.log(sharedValues(object1, object2));
 
 // expect FALSE: no key value matches
-sharedValues(object1, object3)
+console.log(sharedValues(object1, object3));
 
 // expect FALSE: key names are different, even though key values are matched
-sharedValues(object3, object4)
+console.log(sharedValues(object3, object4))
 
 
 
