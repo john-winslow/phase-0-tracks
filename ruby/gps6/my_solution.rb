@@ -1,11 +1,11 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Huen Kwok].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# pulls out data/code from another file that can be used in the code
+# require includes ruby methods/classes etc that are already pre-defined
 require_relative 'state_data'
 
 class VirusPredictor
