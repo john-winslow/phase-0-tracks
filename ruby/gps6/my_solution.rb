@@ -10,12 +10,14 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+# create attributes and variables for new instance
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# returning the results of the predicted_results and speed_of_result method
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +25,7 @@ class VirusPredictor
 
   private
 
+# predicts deaths based on total population, and population density (higher density = higher death)
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +44,7 @@ class VirusPredictor
 
   end
 
+# takes population density of state and bases speed of spread on that
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -69,6 +73,16 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+# DOESN"T WORK:
+# STATE_DATA.key.each do |state, value|
+#  new_state = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+#   new_state.virus_effects
+# end
+
+#does work
+STATE_DATA.each do |state, data|
+  VirusPredictor.new(state, data[:population_density], data[:population]).virus_effects
+end
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -81,6 +95,8 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+
 
 
 #=======================================================================
