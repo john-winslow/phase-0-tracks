@@ -2,23 +2,39 @@ Run a SQL query for each of the following:
 
 1.  Display the information in one table (either table is fine).
 
-
+	sqlite> SELECT * FROM cars;
+	1|true|Forrester|2009|2
+	2|false|Prius|2015|3
+	3|true|CR-X|2012|1
+	4|true|Tundra|2002|3
+	5|true|Outback|2007|2
 
 
 2.  Update an item that meets some condition (you can choose a condition that makes sense).
 
-
-
+	sqlite> UPDATE cars SET year=2008 WHERE model="Outback";
 
 
 3.  Display the information in both tables using one query.
 
-
+	sqlite> SELECT * FROM cars, manufacturers WHERE cars.manufacturer_id = manufacturers.id;
+	1|true|Forrester|2009|2|2|Subaru
+	2|false|Prius|2015|3|3|Toyota
+	3|true|CR-X|2012|1|1|Honda
+	4|true|Tundra|2002|3|3|Toyota
+	5|true|Outback|2008|2|2|Subaru
 
 
 4.  Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
-
+	sqlite>  SELECT manufacturers.name, cars.model FROM cars JOIN manufacturers ON cars.manufacturer_id = manufacturers.id;
+	Subaru|Forrester
+	Toyota|Prius
+	Honda|CR-X
+	Toyota|Tundra
+	Subaru|Outback
 
 
 5.  Delete an item that meets some condition (you can choose a condition that makes sense).
+
+	sqlite> DELETE FROM cars WHERE model="Outback";
