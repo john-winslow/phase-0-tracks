@@ -38,3 +38,23 @@ Run a SQL query for each of the following:
 5.  Delete an item that meets some condition (you can choose a condition that makes sense).
 
 	sqlite> DELETE FROM cars WHERE model="Outback";
+
+
+6.  Trying different joins:
+
+	CROSS JOIN:
+
+	sqlite> SELECT cars.year, manufacturers.name, cars.model FROM cars CROSS JOIN manufacturers;
+	2009|Honda|Forrester
+	2009|Subaru|Forrester
+	2009|Toyota|Forrester
+	2015|Honda|Prius
+	2015|Subaru|Prius
+	2015|Toyota|Prius
+	2012|Honda|CR-X
+	2012|Subaru|CR-X
+	2012|Toyota|CR-X
+	2002|Honda|Tundra
+	2002|Subaru|Tundra
+	2002|Toyota|Tundra
+
