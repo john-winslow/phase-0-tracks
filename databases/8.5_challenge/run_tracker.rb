@@ -20,11 +20,10 @@ def add_run(db, distance, duration)
   db.execute("INSERT INTO runs (distance, duration) VALUES (?, ?)", [distance, duration])
 end
 
-# method to return total miles logged
+# create variables to store total distance, duration, and average mile time
 
-# method to return total duration logged
-
-# method to ruturn average pace logged
+total_distance = db.execute("SELECT SUM(distance) FROM runs")
+total_duration = db.execute("SELECT SUM(duration) FROM runs")
 
 
 # DRIVER CODE
@@ -46,8 +45,8 @@ end
 # if no (or after finished entering run), print statistics from run log
 
 puts "------------------------"
-puts "Total miles: "
-puts "Total time: "
-puts "Average pace: "
+puts "Total miles: #{total_distance}"
+puts "Total time: #{total_duration}"
+puts "Average pace: #{average_pace}"
 puts "------------------------"
 
