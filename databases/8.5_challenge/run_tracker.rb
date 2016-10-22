@@ -32,9 +32,22 @@ end
 
 puts "Would you like to add a run? (y/n)"
 
+# if yes, ask for distance and duration
+if gets.chomp.downcase == 'y'
+	puts "How many miles did you run?"
+	distance = gets.chomp
+
+	puts "How many minutes did you run for?"
+	duration = gets.chomp
+
+	add_run(db, distance, duration)
+end
+
+# if no (or after finished entering run), print statistics from run log
 
 puts "------------------------"
 puts "Total miles: "
 puts "Total time: "
 puts "Average pace: "
 puts "------------------------"
+
