@@ -3,6 +3,7 @@ require 'sqlite3'
 # create new database file logging runs
 db = SQLite3::Database.new("log.db")
 
+
 # SQL string to create new table 
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS runs(
@@ -22,8 +23,8 @@ end
 
 # create variables to store total distance, duration, and average mile time
 
-total_distance = db.execute("SELECT SUM(distance) FROM runs")
-total_duration = db.execute("SELECT SUM(duration) FROM runs")
+total_distance = db.execute("SELECT TOTAL(distance) FROM runs")
+total_duration = db.execute("SELECT TOTAL(duration) FROM runs")
 
 
 # DRIVER CODE
@@ -43,10 +44,13 @@ if gets.chomp.downcase == 'y'
 end
 
 # if no (or after finished entering run), print statistics from run log
+puts total_distance[0]
+puts total_duration[0]
+
 
 puts "------------------------"
-puts "Total miles: #{total_distance}"
-puts "Total time: #{total_duration}"
+puts "Total miles: #{total_distance[0]}"
+puts "Total time: #{total_duration[0]}"
 puts "Average pace: #{average_pace}"
 puts "------------------------"
 
