@@ -3,7 +3,6 @@ require 'sqlite3'
 # create new database file logging runs
 db = SQLite3::Database.new("log.db")
 
-
 # SQL string to create new table 
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS runs(
@@ -26,6 +25,9 @@ end
 total_distance = db.execute("SELECT TOTAL(distance) FROM runs")
 total_duration = db.execute("SELECT TOTAL(duration) FROM runs")
 
+# PROBLEM: results are an array, which means that I cannot convert to integer
+# and divide to find average pace (distance/duration).  I cannot figure this out!
+
 
 # DRIVER CODE
 
@@ -44,13 +46,10 @@ if gets.chomp.downcase == 'y'
 end
 
 # if no (or after finished entering run), print statistics from run log
-puts total_distance[0]
-puts total_duration[0]
-
-
+puts "RUN LOG:"
 puts "------------------------"
 puts "Total miles: #{total_distance[0]}"
-puts "Total time: #{total_duration[0]}"
-puts "Average pace: #{average_pace}"
+puts "Total time: #{total_duration[0]} minutes"
+# puts "Average pace: #{average_pace}"
 puts "------------------------"
 
