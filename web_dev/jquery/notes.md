@@ -3,3 +3,7 @@ To learn about JQuery, I will search for a few different resources on the web.  
 I will create a few test files to play around with JQuery as I go along - after each actionable piece of information i have learned.
 
 Breaks shall be taken!  At times that make sense (hopefully every 30 mins or so)
+
+IN REVIEW:
+
+I learned more from text-based resources rather than video-based.  Going through a JQuery tutorial and trying each method/function on my own seemed to work the best.
