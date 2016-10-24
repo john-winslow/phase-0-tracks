@@ -25,3 +25,25 @@ post '/students' do
 end
 
 # add static resources
+
+
+#create skateboard page
+
+db2 = SQLite3::Database.new("skateboards.db")
+db2.execute("CREATE TABLE IF NOT EXISTS skateboards(type varchar(255), size int)")
+db2.results_as_hash = true
+
+
+get '/skateboards' do
+@skateboards = db2.execute("SELECT * FROM skateboards")
+erb :skateboarding
+end
+
+get '/skateboards/new' do
+  erb :new_skateboard
+end
+
+post '/skateboards/charlie' do
+ db2.execute("INSERT INTO skateboards (type, size) VALUES (?,?)", [params['type'], params['size'].to_f])
+  redirect '/skateboards'
+end
