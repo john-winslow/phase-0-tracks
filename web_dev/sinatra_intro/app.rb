@@ -46,8 +46,22 @@ get '/students/:id' do
 end
 
 # write a GET route that displays an address
-
 get '/contact' do
   "1530 Pretty Road Lane <br>
   San Francisco, CA, USA"
 end
+
+# write a GET route that uses a query parameter as a name,
+# and congratulates the person on a job well done.
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+
+
